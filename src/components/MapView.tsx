@@ -17,18 +17,6 @@ L.Icon.Default.mergeOptions({
 })
 
 /**
- * In dev, React StrictMode double-invokes effects; a single `invalidateSize`
- * on mount helps when the map container is laid out after first paint.
- */
-function MapResizeOnMount() {
-  const map = useMap()
-  useEffect(() => {
-    map.invalidateSize()
-  }, [map])
-  return null
-}
-
-/**
  * OpenStreetMap tiles with a single demo marker. Adjust `center` / `zoom` via props.
  */
 export function MapView({
